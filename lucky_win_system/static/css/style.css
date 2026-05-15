@@ -1,0 +1,385 @@
+/* static/css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    z-index: 100;
+}
+
+.sidebar .logo {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar .logo h3 {
+    color: white;
+    font-size: 24px;
+}
+
+.sidebar .logo p {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.7);
+    padding: 12px 24px;
+    display: block;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sidebar .nav-link i {
+    margin-right: 12px;
+    width: 22px;
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    margin-left: 260px;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+/* ========== CARDS ========== */
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.stat-card h6 {
+    color: #6c757d;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.stat-card h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+
+.stat-icon.primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.stat-icon.success { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.stat-icon.warning { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.stat-icon.info { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+/* ========== GAME PANEL ========== */
+.game-panel {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.panel-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ========== PROGRESS ========== */
+.progress-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.progress-custom {
+    height: 45px;
+    background: #e9ecef;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: width 0.5s;
+}
+
+/* ========== PLAYERS GRID ========== */
+.players-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.players-grid {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.player-card {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #28a745;
+    transition: all 0.3s;
+}
+
+.player-card:hover {
+    transform: translateX(5px);
+    background: #e9ecef;
+}
+
+.player-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* ========== SPIN WHEEL ========== */
+.spin-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    margin: 20px;
+}
+
+.spin-header h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.wheel {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+    transition: transform 0.8s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.wheel-segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel-segment:nth-child(1) { transform: rotate(0deg); background: #ff6b6b; }
+.wheel-segment:nth-child(2) { transform: rotate(60deg); background: #4ecdc4; }
+.wheel-segment:nth-child(3) { transform: rotate(120deg); background: #ffe66d; }
+.wheel-segment:nth-child(4) { transform: rotate(180deg); background: #a8e6cf; }
+.wheel-segment:nth-child(5) { transform: rotate(240deg); background: #ffb8b8; }
+.wheel-segment:nth-child(6) { transform: rotate(300deg); background: #c3cfe2; }
+
+.segment-prize { font-size: 36px; }
+.segment-value { font-size: 14px; color: white; font-weight: bold; }
+
+.wheel-pointer {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 45px;
+    color: #f5576c;
+    z-index: 10;
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 15;
+}
+
+/* ========== BUTTONS ========== */
+.btn-spin {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-spin:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(245,87,108,0.4);
+}
+
+.btn-stop {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+.btn-success-custom {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-danger-custom {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* ========== TABLES ========== */
+.data-table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+}
+
+.data-table thead th {
+    padding: 15px;
+    font-weight: 600;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.data-table tbody td {
+    padding: 12px 15px;
+}
+
+/* ========== TABS ========== */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 0.05s linear infinite;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .sidebar { width: 70px; }
+    .sidebar .logo h3, .sidebar .logo p, .sidebar .nav-link span { display: none; }
+    .main-content { margin-left: 70px; }
+    .wheel { width: 280px; height: 280px; }
+    .segment-prize { font-size: 24px; }
+}
