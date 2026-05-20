@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucky Draw</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #111;
+            color: white;
+        }
+
+        #wheel {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid gold;
+            margin: 20px auto;
+            transition: transform 4s ease-out;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎲 Lucky Draw Wheel</h1>
+
+<div id="wheel">🎡 SPIN</div>
+
+<button onclick="spin()">SPIN</button>
+
+<h2 id="result"></h2>
+
+<script>
+let players = Array.from({length: 20}, (_, i) => i + 1);
+
+function spin() {
+    let winner = players[Math.floor(Math.random() * players.length)];
+
+    let wheel = document.getElementById("wheel");
+
+    let rotation = 3600 + (winner * 18);
+
+    wheel.style.transform = "rotate(" + rotation + "deg)";
+
+    setTimeout(() => {
+        document.getElementById("result").innerText =
+            "🏆 Winner: Player " + winner;
+    }, 4000);
+}
+</script>
+
+</body>
+</html>
